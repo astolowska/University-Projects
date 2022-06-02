@@ -1,0 +1,22 @@
+Ćwiczenia 2 
+
+1. Modyfikatory dostępu
+	a. private/public - protected (to w dziedziczeniu)
+	b. Właściwości
+	c. Klasa pracownik w odpowiednimi polami i modyfikatorami. 
+		Metoda KonwertujNaNapis używa pól prywatnych klasy - sprawozdanie
+
+2. Klasy statyczne, metody statyczne
+	a. Rozszerzenia klas
+	b. Rozszerzenie klasy System.String o metodę 
+	IsNullOrEmpty() / CzyJestNullemLubPustym() - sprawozdanie
+
+3. Losowanie liczb z zakresu.
+	a. Losowanie permutacji
+	b. Losowanie rozdania do Brydża 
+		i. Wprowadzenie/połączenie obiektów RekaGracza 
+			i Rozdanie/Kurpier - sprawozdanie
+		
+	
+
+	

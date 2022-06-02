@@ -1,0 +1,29 @@
+Ćwiczenia 1
+
+
+1. Ciąg Fibonacciego
+a. Rekurencyjnie
+b. Iteracyjnie - wzorem 
+
+2. Silnia
+a. Iteracyjnie 
+b. Rekurencyjnie - sprawozdanie
+
+ 
+3. Suma liczb parzystych do 100.
+a. Użyć różnych pętli 'for', 'do-while'.
+b. Użyć pętli 'do-while' - sprawozdanie
+c. Zwiększyć zakres sumowania do 100 000
+d. Zwiększyć zakres do 1 000 0000
+e. Zmierzyć czas wykonania z użyciem Stopwatch.
+f. Zmiejszyć czas wykonania do 1s przy limicie 2000000000. - sprawozdanie 
+
+4. Obiekty
+a. Pola
+b. Metody
+
+5. Przykłady
+a. Car
+b. Employee - sprawozdanie - 3 metody, 3 pola (co najmniej)
+		
+

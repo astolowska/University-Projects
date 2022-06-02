@@ -1,0 +1,78 @@
+//Rextester.Program.Main is the entry point for your code. Don't change it. 
+//Compiler version 4.0.30319.17929 for Microsoft (R) .NET Framework 4.5 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var pracownik = new Pracownik();
+            pracownik.Imie = "Konrad";
+            pracownik.Nazwisko = "Kowalski";
+            pracownik.RokZatrudnienia = 2009;
+            Console.WriteLine(pracownik.KonwertujNaNapis());
+        }
+    }
+    
+    public class Pracownik
+    {
+        private string _imie;
+        public string Imie
+        {
+            get
+            {
+                return _imie;
+            }
+            set
+            {
+                if(!value.CzyJestNullemLubPustym())
+                {
+                    _imie = value;
+                }
+            }
+            
+        }
+        public string Nazwisko {get; set;}
+        
+        private int _rokZatrudnienia;
+        public int RokZatrudnienia 
+        {
+            get
+            {
+                return this._rokZatrudnienia;
+            }
+            set
+            {
+                if(value > 1000)
+                {
+                    this._rokZatrudnienia = value;
+                }
+            }
+        }
+        
+        public string KonwertujNaNapis()
+        {
+            return String.Format("{0} {1}. Rok:{2}", Imie, Nazwisko, RokZatrudnienia);
+        }
+    }
+    
+    public static class StringExtension
+    {
+        public static bool CzyNull(this String tekst)
+        {
+            Console.WriteLine("czy null jest wywolane");
+            return tekst == null;
+        }
+        
+        public static bool CzyJestNullemLubPustym(this String tekst)
+        {
+            return (tekst == null) || (tekst == String.Empty);
+        }
+    }
+}

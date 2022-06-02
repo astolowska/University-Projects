@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var pracownik = new Employee();
+            pracownik.RokZatrudnienia = 2013;
+            pracownik.Imie = "Katarzyna";
+            pracownik.Nazwisko = "Nowak";
+            pracownik.WysokoscPremii = 800;
+            pracownik.Pracuj();
+            pracownik.Urlop();
+            pracownik.Spotkanie();
+            Console.WriteLine(pracownik.RokZatrudnienia);
+            Console.WriteLine(pracownik.Imie);
+            Console.WriteLine(pracownik.Nazwisko);
+            Console.WriteLine(pracownik.WysokoscPremii);
+          
+            
+            int konwertuj = 123;
+            pracownik.KonwertujNaNapis(konwertuj);
+            
+        }
+
+        public class Employee
+        {
+            private int _rokZatrudnienia;
+            private int _wysokoscPremii;
+            private string _imie;
+            private string _nazwisko;
+            
+            public int RokZatrudnienia
+            {
+                get
+                {
+                    return _rokZatrudnienia;
+                }
+                set
+                {
+                    _rokZatrudnienia = value;
+                }
+            }
+            
+            public string Nazwisko
+            {
+                get
+                {
+                    return _nazwisko;
+                }
+                set
+                {
+                    _nazwisko = value;
+                }
+            }
+            
+            public string Imie
+            {
+                get
+                {
+                    return _imie;
+                }
+                set
+                {
+                    _imie = value;
+                }
+            }
+            
+            public int WysokoscPremii
+            {
+                get
+                {
+                    return _wysokoscPremii;
+                }
+                set
+                {
+                    _wysokoscPremii = value;
+                }
+            }
+            
+            
+            
+            public void Pracuj()
+            {
+                Console.WriteLine("Pracownik uzupelnia luki w dokumentacji.");
+            }
+            
+            public void Urlop()
+            {
+                Console.WriteLine("Pracownik przebywa na urlopie. Wroci szybciej, niz sam by sobie tego zyczyl.");
+            }
+            
+            public void Spotkanie()
+            {
+                Console.WriteLine("Pracownik uczestniczy w spotkaniu dotyczacym intratnej propozycji wspolpracy.");
+            }
+            
+            
+            
+            private string _poKonwersji;
+            public void KonwertujNaNapis(int liczba)
+            {
+                _poKonwersji = liczba.ToString();
+                Console.WriteLine("\nLiczba {0} to teraz string.", liczba);
+                Console.WriteLine(liczba.GetType());
+                Console.WriteLine(_poKonwersji.GetType());
+            }
+            
+        }
+    }
+}

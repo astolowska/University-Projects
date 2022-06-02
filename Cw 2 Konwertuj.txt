@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(String[] args)
+        {
+            var x1 = 3;
+            var y1 = 2.5;
+            double x2 = -4, y2 = 5;
+            double x3, y3;
+            double xWynik = 5, yWynik = 1;
+
+            Dodaj(x1, y1, x2, y2, out x3, out y3);
+
+            Console.WriteLine(String.Format("[{0},{1}] + [{2},{3}] = [{4},{5}]", x1, y1, x2, y2, x3, y3)); 
+
+            bool rowne = CzyRowne(x3, y2, yWynik, xWynik);
+
+            Console.WriteLine(String.Format("[{0},{1}] = [{2},{3}]? {4}", x3, y2, yWynik, xWynik, rowne)); 
+            
+            
+            
+            x3 = x1 + x2;
+            var par1 = new Parametry(x3, y2);
+            var par2 = new Parametry(yWynik,xWynik);
+            
+            Console.WriteLine(String.Format("{0} = {1}? {2}", par1.KonwertujNaNapis(), par2.KonwertujNaNapis(), rowne));
+            
+            
+            var p1 = new Parametry(3, 2.5);
+            var p2 = new Parametry(-4, 5);
+
+            var p3 = p1.Dodaj(p2);
+            
+            Console.WriteLine(String.Format("{0} + {1} = {2}", p1.KonwertujNaNapis(), p2.KonwertujNaNapis(), p3.KonwertujNaNapis()));
+            
+            bool rownePar = CzyRownePar(par1, par2);
+            Console.WriteLine(String.Format("{0} = {1}? {2}", p1.KonwertujNaNapis(), p2.KonwertujNaNapis(), rownePar));
+        }
+
+        private static void Dodaj(double a1, double b1, double a2, double b2, out double a3, out double b3) 
+        {
+            a3 = a1 + a2;
+            b3 = b1 + b2;
+        }
+
+        private static bool CzyRowne(double a1, double b1, double a2, double b2)
+        {
+            return a1 == a2 && b1 == b2; 
+        }
+    
+    }
+    
+    class Parametry
+    {
+        public double X {get; private set;}
+        public double Y {get; private set;}
+        
+        public Parametry(double x, double y)
+        {
+            X = x;
+            Y = y;
+        }
+        
+        public Parametry Dodaj(Parametry nowy)
+        {
+            var wynik = new Parametry(X + nowy.X,  Y + nowy.Y);
+            
+            return wynik;
+        }
+        
+        public string KonwertujNaNapis()
+        {
+            return String.Format("[{0};{1}]", X, Y);
+        }
+        
+        public bool CzyRownePar(Parametry p1, Parametry p2)
+        {
+            return p1.X == p2.X && p1.Y == p2.Y; 
+            //TODO
+        }
+    }
+}

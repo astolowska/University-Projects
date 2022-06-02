@@ -1,0 +1,40 @@
+//Rextester.Program.Main is the entry point for your code. Don't change it.
+//Compiler version 4.0.30319.17929 for Microsoft (R) .NET Framework 4.5
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var opel = new Car();
+            opel.rocznik = 1990;
+            opel.marka = "Opel Astra";
+            opel.Jedz();
+            Console.WriteLine(opel.marka);
+            opel.Stoj();
+        }
+        
+        public class Car
+        {
+            public int rocznik;
+            public string marka;
+            
+            
+            public void Jedz()
+            {
+                Console.WriteLine("Jedzie");
+            }
+            
+            public void Stoj()
+            {
+                Console.WriteLine("Stoi");
+            }
+        }
+    }
+}

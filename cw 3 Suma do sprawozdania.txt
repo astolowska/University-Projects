@@ -1,0 +1,64 @@
+//Rextester.Program.Main is the entry point for your code. Don't change it.
+//Compiler version 4.0.30319.17929 for Microsoft (R) .NET Framework 4.5
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //Your code goes here
+            
+            Console.WriteLine(args);
+            
+            int dana = 6;
+           // int suma = SumaParzystych(dana);
+            int suma = SumaParzystychFor(dana);
+            string wiadomosc = String.Format("Suma wynosi: {0}", suma);
+            Console.WriteLine(wiadomosc);
+            
+        }
+        
+        public static int SumaParzystych(int limit)
+        {
+            int suma = 0;
+            if(limit % 2 == 1)
+            {
+                limit -= 1;
+            }
+            int skladnik = limit;
+            while(skladnik > 0)
+            {
+           
+                suma += skladnik;
+                
+                skladnik -= 2;
+            }
+            
+            return suma;
+        }
+        
+        public static int SumaParzystychFor(int limit) //DO SPRAWOZDANIA
+        {
+            int suma = 0;
+            int licznik = limit;
+            
+            for (var i = 0; i < limit; i++)
+            {
+                if(licznik % 2 == 0)
+                {
+                    suma += licznik;
+                }
+                licznik --;
+            }
+            
+            return suma;
+        }
+
+    }
+}
